@@ -21,7 +21,6 @@ set noerrorbells
 filetype on
 filetype plugin on
 filetype indent on
-
 syntax on
 
 Bundle 'altercation/vim-colors-solarized'
@@ -34,6 +33,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'Shougo/unite.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'hughbien/md-vim'
+Bundle 'nvie/vim-flake8'
 
 " solarized options 
 let g:solarized_termcolors = 256
@@ -44,31 +44,25 @@ colorscheme solarized
 
 au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md set filetype=markdown
 au BufRead,BufNewFile *.coffee set ft=coffee
+au BufRead,BufNewFile *.js,*.json set ft=javascript
 "for nerd tree
 let NERDTreeShowBookmarks=1
 nmap <silent><Space>nt :NERDTreeToggle<CR>
 
-"------------------------------------
-"" unite.vim
-"------------------------------------
-"" 入力モードで開始する
+"for unite.vim
 let g:unite_enable_start_insert=0
-"バッファ一覧
 noremap <silent><Space>ub :Unite buffer<CR>
-" ファイル一覧
 noremap <silent><Space>ud -buffer-name=files file<CR>
-" 最近使ったファイルの一覧
 noremap <silent><Space>um :Unite file_mru<CR>
-" レジスタ一覧
 noremap <silent><Space>ur :Unite -buffer-name=register register<CR>
-" ファイルとバッファ
 noremap <silent><Space>uf :Unite buffer file_mru<CR>
-" 全部
 noremap <silent><Space>ua :Unite UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-" ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
-
 noremap <silent>j gj
 noremap <silent>k gk
+
+
+" for flake8
+autocmd BufWritePost *.py call Flake8()
