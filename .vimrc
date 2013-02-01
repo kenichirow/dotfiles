@@ -28,13 +28,15 @@ Bundle 'AutoComplPop'
 Bundle 'surround.vim'
 Bundle 'vim-coffee-script'
 Bundle 'othree/html5.vim'
+Bundle 'mattn/zencoding-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-rails'
 Bundle 'Shougo/unite.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'hughbien/md-vim'
 Bundle 'nvie/vim-flake8'
-
+Bundle 'django.vim'
+Bundle 'tpope/vim-haml'
+Bundle 'AutoComplPop'
 " solarized options 
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
