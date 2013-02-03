@@ -9,14 +9,15 @@ TARGET = %w[
 ]
 
 task :install do
- TARGET.each do |path|
-  to   = File.expand_path(path ,"~")
-  from =  File.expand_path(path)
-  if File.symlink? to
-    File.delete(to)
-  end
+  TARGET.each do |path|
+    to   = File.expand_path(path ,"~")
+    from = File.expand_path(path)
 
-  File.symlink(from,to)
-  puts "installed #{to}"
- end 
+    if File.symlink? to
+      File.delete(to)
+    end
+    File.symlink(from,to)
+
+    puts "installed #{to}"
+  end 
 end
