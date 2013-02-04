@@ -1,0 +1,14 @@
+[core]
+	editor = vim
+  excludesfile = ~/.gitignore
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[user]
+	name = kenichirow
+	email = allagesxxx@gmail.com
+[github]
+	user = kenichirow

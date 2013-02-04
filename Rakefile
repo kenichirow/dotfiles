@@ -4,6 +4,8 @@ TARGET = %w[
   .tmux.conf
   .vimrc
   .gvimrc
+  .gitconfig
+  .gitignore
   .zshrc
   .zshenv
 ]
