@@ -59,6 +59,7 @@ noremap <silent><Space>um :Unite file_mru<CR>
 noremap <silent><Space>ur :Unite -buffer-name=register register<CR>
 noremap <silent><Space>uf :Unite buffer file_mru<CR>
 noremap <silent><Space>ua :Unite UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+noremap <silent><Space>cd :UniteWithBufferDir file -buffer-name=files
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
