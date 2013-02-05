@@ -12,3 +12,8 @@
 	email = allagesxxx@gmail.com
 [github]
 	user = kenichirow
+
+[alias]
+  l = log
+  s = status -s
+  b = branch -a
