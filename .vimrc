@@ -17,6 +17,7 @@ set t_Co=256
 set ts=2 sw=2 expandtab
 set cursorline
 set noerrorbells
+set noswapfile
 
 filetype on
 filetype plugin on
@@ -47,6 +48,7 @@ colorscheme solarized
 au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md set filetype=markdown
 au BufRead,BufNewFile *.coffee set ft=coffee
 au BufRead,BufNewFile *.js,*.json set ft=javascript
+
 "for nerd tree
 let NERDTreeShowBookmarks=1
 nmap <silent><Space>nt :NERDTreeToggle<CR>
