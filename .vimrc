@@ -33,11 +33,40 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-rails'
 Bundle 'Shougo/unite.vim'
+Bundle 'neocomplcache'
 Bundle 'hughbien/md-vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'django.vim'
 Bundle 'tpope/vim-haml'
-Bundle 'AutoComplPop'
+
+
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+
+
 " solarized options 
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
