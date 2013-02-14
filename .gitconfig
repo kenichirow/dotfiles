@@ -14,10 +14,12 @@
 	user = kenichirow
 
 [alias]
-  l = log
-  s = status -s
-  b = branch -a
+  l  = log
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  s  = status -s
+  b  = branch -a
+  co = checkout
+  po = pull origin
 [push]
 	default = simple
