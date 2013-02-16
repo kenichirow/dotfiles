@@ -1,6 +1,7 @@
 #! /usr/bin/env rake
 
 TARGET = %w[
+  .bowerrc
   .tmux.conf
   .vimrc
   .gvimrc
