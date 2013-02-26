@@ -1,6 +1,7 @@
 [core]
 	editor = vim
   excludesfile = ~/.gitignore
+	quotepath = false
 [color]
 	ui = auto
 	diff = auto
@@ -21,5 +22,6 @@
   b  = branch -a
   co = checkout
   po = pull origin
+  pull-update = "!sh -c 'git pull origin develop` git submodule update -i`'"
 [push]
 	default = simple
