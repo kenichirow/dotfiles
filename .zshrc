@@ -1,3 +1,5 @@
+source ~/.git-prompt.sh
+
 autoload colors
 colors
 autoload -U compinit
@@ -21,11 +23,12 @@ setopt correct
 setopt list_packed
 setopt prompt_subst
 setopt no_beep
+setopt PROMPT_SUBST
 
-
-PROMPT="%{${fg[green]}%}☺  %{${reset_color}%}"
 RPROMPT="[%40<...<%~]" 
+PS1='%c$(__git_ps1 ${fg[green]}" (%s)") ${reset_color}\$ '
 export=xterm-color
+
 
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
@@ -37,9 +40,10 @@ bindkey "\\en" history-beginning-search-forward-end
 alias ll="ls -l"
 alias la="ls -la"
 
-
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
 . `brew --prefix`/etc/profile.d/z.sh
+
+

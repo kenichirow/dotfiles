@@ -9,6 +9,7 @@ TARGET = %w[
   .gitignore
   .zshrc
   .zshenv
+  .git-prompt.sh
 ]
 
 task :install do
