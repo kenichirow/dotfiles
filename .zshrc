@@ -26,7 +26,7 @@ setopt no_beep
 setopt PROMPT_SUBST
 
 RPROMPT="[%40<...<%~]" 
-PS1='%c$(__git_ps1 ${fg[green]}" (%s)") ${reset_color}\$ '
+PS1='$(__git_ps1 ${fg[green]}" [%s]") ${reset_color}\$ '
 export=xterm-color
 
 
