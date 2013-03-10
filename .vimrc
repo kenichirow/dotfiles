@@ -9,7 +9,6 @@ set showmatch showmode showcmd
 set title
 set number
 set ruler
-set hlsearch
 set wrap
 set shortmess+=I
 set visualbell
@@ -18,6 +17,7 @@ set ts=2 sw=2 expandtab
 set cursorline
 set noerrorbells
 set noswapfile
+set autoindent
 
 filetype on
 filetype plugin on
@@ -36,6 +36,25 @@ Bundle 'hughbien/md-vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'django.vim'
 Bundle 'tpope/vim-haml'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'cakebaker/scss-syntax.vim'
+
+
+" Default Indentation
+ set autoindent
+ set smartindent     " indent when
+ set tabstop=2       " tab width
+ set softtabstop=2  " backspace
+ set shiftwidth=2    " indent width
+ set expandtab       " expand tab to space
+
+autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
+autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
 
 

@@ -4,12 +4,11 @@ autoload colors
 colors
 autoload -U compinit
 compinit
-autoload predict-on
-predict-on
+#autoload predict-on
+#predict-on
 
-autoload history-search-end
-autoload predict-on
 bindkey -v
+autoload predict-on
 setopt auto_cd
 setopt auto_pushd
 setopt correct
@@ -17,11 +16,8 @@ setopt pushd_ignore_dups
 setopt share_history
 setopt nolistbeep
 setopt hist_ignore_dups # ignore duplication command history list
-setopt share_history # share command history datautoload -U compinit
-setopt auto_pushd
-setopt correct
+setopt share_history # share command history dat
 setopt list_packed
-setopt prompt_subst
 setopt no_beep
 setopt PROMPT_SUBST
 
