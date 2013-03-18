@@ -38,6 +38,7 @@ Bundle 'django.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'airblade/vim-gitgutter'
 
 
 " Default Indentation
