@@ -2,6 +2,7 @@
 	editor = vim
   excludesfile = ~/.gitignore
 	quotepath = false
+  cleanup = whitespace
 [color]
 	ui = auto
 	diff = auto
@@ -25,3 +26,5 @@
   pull-update = "!sh -c 'git pull origin develop` git submodule update -i`'"
 [push]
 	default = simple
+[commit]
+	cleanup = whitespace
