@@ -70,25 +70,28 @@ au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md set filetyp
 au BufRead,BufNewFile *.coffee set ft=coffee
 au BufRead,BufNewFile *.js,*.json set ft=javascript
 
-"for nerd tree
+"nerd tree
 let NERDTreeShowBookmarks=1
-nmap <silent><Space>nt :NERDTreeToggle<CR>
+nmap <silent>nt :NERDTreeToggle<CR>
 
-"for unite.vim
-"let g:unite_enable_start_insert=0
-"noremap <silent><Space>ub :Unite buffer<CR>
-"noremap <silent><Space>ud -buffer-name=files file<CR>
-"noremap <silent><Space>um :Unite file_mru<CR>
-"noremap <silent><Space>ur :Unite -buffer-name=register register<CR>
-"noremap <silent><Space>uf :Unite buffer file_mru<CR>
-"noremap <silent><Space>ua :UniteWithBufferDir file<CR>
-"noremap <silent><Space>cd :UniteWithBufferDir file -buffer-name=files
-"au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-"au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+"git gutter
+nmap <silent>gt :GitGutterToggle<CR>
+nmap <silent>ge :GitGutterEnable<CR>
+nmap <silent>gd :GitGutterDisable<CR>
+nmap <silent>nh :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
+nmap <silent>ph :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
+
+"unite
+let g:unite_enable_start_insert=0
+noremap <silent><space>ub :Unite buffer<CR>
+noremap <silent><space>ud -buffer-name=files file<CR>
+noremap <silent><space>um :Unite file_mru<CR>
+noremap <silent><space>ur :Unite -buffer-name=register register<CR>
+noremap <silent><space>uf :Unite buffer file_mru<CR>
+noremap <silent><space>ua :UniteWithBufferDir file<CR>
+noremap <silent><space>cd :UniteWithBufferDir file -buffer-name=files<CR>
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 noremap <silent>j gj
 noremap <silent>k gk
-
-
-" for flake8
-autocmd BufWritePost *.py call Flake8()
