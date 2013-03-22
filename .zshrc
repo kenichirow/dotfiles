@@ -21,8 +21,8 @@ setopt list_packed
 setopt no_beep
 setopt PROMPT_SUBST
 
+PROMPT=$'%{\e[32m%}$(__git_ps1 "[%s]")→ %{\e[m%}'
 RPROMPT="[%40<...<%~]" 
-PROMPT='$(__git_ps1 ${fg[green]}" [%s]") ${reset_color}${fg[red]}→ ${reset_color}'
 export=xterm-color
 
 
