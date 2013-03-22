@@ -75,6 +75,7 @@ let NERDTreeShowBookmarks=1
 nmap <silent>nt :NERDTreeToggle<CR>
 
 "git gutter
+let g:gitgutter_enabled = 0
 nmap <silent>gt :GitGutterToggle<CR>
 nmap <silent>ge :GitGutterEnable<CR>
 nmap <silent>gd :GitGutterDisable<CR>
