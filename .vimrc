@@ -69,6 +69,13 @@ colorscheme solarized
 au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md set filetype=markdown
 au BufRead,BufNewFile *.coffee set ft=coffee
 au BufRead,BufNewFile *.js,*.json set ft=javascript
+au BufRead,BufNewFile Vagrantfile set ft=ruby
+
+
+
+noremap <silent>j gj
+noremap <silent>k gk
+
 
 "nerd tree
 let NERDTreeShowBookmarks=1
@@ -84,15 +91,12 @@ nmap <silent>ph :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
 
 "unite
 let g:unite_enable_start_insert=0
-noremap <silent><space>ub :Unite buffer<CR>
-noremap <silent><space>ud -buffer-name=files file<CR>
-noremap <silent><space>um :Unite file_mru<CR>
-noremap <silent><space>ur :Unite -buffer-name=register register<CR>
-noremap <silent><space>uf :Unite buffer file_mru<CR>
-noremap <silent><space>ua :UniteWithBufferDir file<CR>
+noremap <silent><space>b :Unite buffer<CR>
+noremap <silent><space>f :Unite -buffer-name=files file<CR>
+noremap <silent><space>r :Unite -buffer-name=register register<CR>
+noremap <silent><space>fm :Unite buffer file_mru<CR>
+noremap <silent><space>dd :UniteWithBufferDir file<CR>
 noremap <silent><space>cd :UniteWithBufferDir file -buffer-name=files<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
-noremap <silent>j gj
-noremap <silent>k gk
