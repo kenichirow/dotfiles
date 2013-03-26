@@ -21,8 +21,8 @@ setopt list_packed
 setopt no_beep
 setopt PROMPT_SUBST
 
-PROMPT=$'%{\e[32m%}$(__git_ps1 "[%s]→ ")%{\e[m%}'
-RPROMPT=$'[%40<...<%~]' 
+PROMPT=$'%{\e[32m%}$(__git_ps1 "[%s]") → %{\e[m%}'
+RPROMPT=$'%{\e[34m%}[%40<...<%~] %{\e[m%}' 
 export=xterm-color
 
 zle -N history-beginning-search-backward-end history-search-end
