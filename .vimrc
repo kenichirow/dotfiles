@@ -152,3 +152,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?  "\<Plug>(neosnippet_expa
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+nnoremap cp :cprevious<CR>   
+nnoremap cn :cnext<CR>       
