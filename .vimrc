@@ -42,6 +42,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'fholgado/minibufexpl.vim' 
 
 
 " Default Indentation
@@ -155,3 +156,11 @@ endif
 
 nnoremap cp :cprevious<CR>   
 nnoremap cn :cnext<CR>       
+
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBuffs = 1
+
+nnoremap bp :bp<CR>   
+nnoremap bn :bn<CR>       
+
