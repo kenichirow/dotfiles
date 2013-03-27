@@ -128,7 +128,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 
 
- " Recommended key-mappings.
  " <CR>: close popup and save indent.
  inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
  " <TAB>: completion.
@@ -139,6 +138,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
  inoremap <expr><C-y>  neocomplcache#close_popup()
  inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
+set completeopt-=preview
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
