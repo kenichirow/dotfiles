@@ -19,7 +19,6 @@ set noerrorbells
 set noswapfile
 set autoindent
 
-
 filetype on
 filetype plugin on
 filetype indent on
@@ -42,6 +41,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'fholgado/minibufexpl.vim' 
 
 
 " Default Indentation
@@ -94,12 +94,12 @@ nmap <silent>ph :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
 
 "unite
 let g:unite_enable_start_insert=0
-noremap <silent><space>b :Unite buffer<CR>
-noremap <silent><space>f :Unite -buffer-name=files file<CR>
-noremap <silent><space>r :Unite -buffer-name=register register<CR>
-noremap <silent><space>fm :Unite buffer file_mru<CR>
-noremap <silent><space>dd :UniteWithBufferDir file<CR>
-noremap <silent><space>cd :UniteWithBufferDir file -buffer-name=files<CR>
+noremap <silent>ub :Unite buffer<CR>
+noremap <silent>uf :Unite -buffer-name=files file<CR>
+noremap <silent>ur :Unite -buffer-name=register register<CR>
+noremap <silent>um :Unite buffer file_mru<CR>
+noremap <silent>ud :UniteWithBufferDir file<CR>
+noremap <silent>cd :UniteWithBufferDir file -buffer-name=files<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
@@ -128,7 +128,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 
 
- " Recommended key-mappings.
  " <CR>: close popup and save indent.
  inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
  " <TAB>: completion.
@@ -139,6 +138,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
  inoremap <expr><C-y>  neocomplcache#close_popup()
  inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
+set completeopt-=preview
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -153,5 +153,13 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+" quickfix
 nnoremap cp :cprevious<CR>   
 nnoremap cn :cnext<CR>       
+
+"minibuffexpl
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBuffs = 1
+nnoremap bp :bp<CR>   
+nnoremap bn :bn<CR>       
