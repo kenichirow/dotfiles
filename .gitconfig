@@ -17,9 +17,9 @@
 
 [alias]
   l  = log
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cgreen%ad\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=local
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cgreen%ad\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=local
-  today = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cgreen%ad\\ %Creset%s%Cblue\\ [%cn]" --decorate --since="10am" --author="kenichirow" --date=relative
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=local
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=local
+  today = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cbule[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --since="10am" --author="kenichirow" --date=relative
   s  = status -s
   b  = branch -a
   co = checkout
