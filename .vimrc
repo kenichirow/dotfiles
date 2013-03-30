@@ -41,7 +41,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'airblade/vim-gitgutter'
-
+Bundle 'wikitopian/hardmode'
 
 " Default Indentation
  set autoindent
@@ -77,8 +77,8 @@ au BufRead,BufNewFile Vagrantfile set ft=ruby
 
 noremap <silent>j gj
 noremap <silent>k gk
-
-
+noremap <silent>vs :vnew<CR>
+noremap <silent>hs :new<CR>
 "nerd tree
 let NERDTreeShowBookmarks=1
 nmap <silent>nt :NERDTreeToggle<CR>
@@ -158,3 +158,5 @@ nnoremap cn :cnext<CR>
 
 nnoremap bp :bp<CR>   
 nnoremap bn :bn<CR>       
+
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
