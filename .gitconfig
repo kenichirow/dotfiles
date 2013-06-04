@@ -19,12 +19,22 @@
   l  = log
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=local
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=local
-  today = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cbule[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --since="10am" --author="kenichirow" --date=relative
-  s  = status -s
-  b  = branch -a
+  today = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --since="10am" --author="kenichirow" --date=relative
+  b  = branch
+  ba = branch -a
   co = checkout
-  po = pull origin
+  cb = checkout -b
+  c  = commit 
+  cm = commit -m
+  pl = pull
+  ps = push
+  s  = status
+  ss = status -s
+	dmb = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+
 [push]
+	default = simple
+[pull]
 	default = simple
 [commit]
 	cleanup = whitespace

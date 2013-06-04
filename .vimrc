@@ -42,6 +42,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'wikitopian/hardmode'
+Bundle 'tomasr/molokai'
 
 " Default Indentation
  set autoindent
@@ -66,7 +67,8 @@ let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme molokai
 
 au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md set filetype=markdown
 au BufRead,BufNewFile *.coffee set ft=coffee
@@ -159,4 +161,4 @@ nnoremap cn :cnext<CR>
 nnoremap bp :bp<CR>   
 nnoremap bn :bn<CR>       
 
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()

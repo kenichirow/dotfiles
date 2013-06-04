@@ -32,6 +32,9 @@ bindkey "^n" history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
+
+alias reload="source ~/.zshrc"
+
 alias g="git"
 alias ll="ls -l"
 alias la="ls -la"
@@ -39,6 +42,8 @@ alias la="ls -la"
 alias rs="python manage.py runserver"
 alias id="sh ./init_db.sh"
 alias dp="sh ./delete_pyc.sh"
+alias gsu="git submodule update -i"
+
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
