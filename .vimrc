@@ -168,4 +168,4 @@ nnoremap tn :tabn<CR>
 nnoremap tc :tabnew<CR>
 nnoremap tx :tab<CR>
 
-"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
