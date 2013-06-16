@@ -164,5 +164,8 @@ nnoremap bp :bp<CR>
 nnoremap bn :bn<CR>       
 
 nnoremap tp :tabp<CR>   
-nnoremap tn :tabn<CR>       
+nnoremap tn :tabn<CR>
+nnoremap tc :tabnew<CR>
+nnoremap tx :tab<CR>
+
 "autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
