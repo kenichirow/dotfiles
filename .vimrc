@@ -43,6 +43,7 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'wikitopian/hardmode'
 Bundle 'tomasr/molokai'
+Bundle 'derekwyatt/vim-scala'
 
 " Default Indentation
  set autoindent
@@ -74,6 +75,7 @@ au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md set filetyp
 au BufRead,BufNewFile *.coffee set ft=coffee
 au BufRead,BufNewFile *.js,*.json set ft=javascript
 au BufRead,BufNewFile Vagrantfile set ft=ruby
+au BufNewFile,BufRead *.scala set filetype=scala
 
 
 
