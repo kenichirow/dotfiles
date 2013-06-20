@@ -44,6 +44,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'wikitopian/hardmode'
 Bundle 'tomasr/molokai'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'ack.vim'
 
 " Default Indentation
  set autoindent
@@ -169,3 +170,7 @@ nnoremap tc :tabnew<CR>
 nnoremap tx :tab<CR>
 
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+nnoremap ch :call HardMode()<CR>   
+nnoremap ce :call EasyMode()<CR>   
+
