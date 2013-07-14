@@ -169,6 +169,9 @@ nnoremap tn :tabn<CR>
 nnoremap tc :tabnew<CR>
 nnoremap tx :tab<CR>
 
+nnoremap sv :vsplit<CR>
+nnoremap sh :split<CR>
+
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 nnoremap ch :call HardMode()<CR>   
