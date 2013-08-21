@@ -1,3 +1,4 @@
+source ~/.simplenoterc
 " vundle 
 set nocompatible
 filetype off 
@@ -45,6 +46,9 @@ Bundle 'wikitopian/hardmode'
 Bundle 'tomasr/molokai'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'ack.vim'
+Bundle 'vim-scripts/VimClojure'
+
+
 
 " Default Indentation
  set autoindent
@@ -77,6 +81,7 @@ au BufRead,BufNewFile *.coffee set ft=coffee
 au BufRead,BufNewFile *.js,*.json set ft=javascript
 au BufRead,BufNewFile Vagrantfile set ft=ruby
 au BufNewFile,BufRead *.scala set filetype=scala
+au BufNewFile,BufRead *.clj,*.cljs set filetype=clojure
 
 
 
