@@ -27,8 +27,9 @@ export=xterm-color
 
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^n" history-beginning-search-forward-end
+bindkey "^R" history-incremental-search-backward
+bindkey "^S" history-incremental-search-forward
+
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
@@ -50,5 +51,4 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 . `brew --prefix`/etc/profile.d/z.sh
-
 
