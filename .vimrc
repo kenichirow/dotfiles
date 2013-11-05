@@ -35,6 +35,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/vimproc.vim'
 Bundle 'hughbien/md-vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'django.vim'
@@ -73,8 +74,8 @@ let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
-"colorscheme solarized
-colorscheme molokai
+colorscheme solarized
+" colorscheme molokai
 
 au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md set filetype=markdown
 au BufRead,BufNewFile *.coffee set ft=coffee
@@ -102,16 +103,24 @@ nmap <silent>nh :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
 nmap <silent>ph :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
 
 "unite
-let g:unite_enable_start_insert=0
-noremap <silent>ub :Unite buffer<CR>
-noremap <silent>uf :Unite -buffer-name=files file<CR>
-noremap <silent>ur :Unite -buffer-name=register register<CR>
-noremap <silent>um :Unite buffer file_mru<CR>
-noremap <silent>ud :UniteWithBufferDir file<CR>
+let g:unite_enable_start_insert=1
+noremap <silent>,b :Unite buffer<CR>
+noremap <silent>,f :Unite -buffer-name=files file<CR>
+noremap <silent>,rg :Unite -buffer-name=register register<CR>
+noremap <silent>,m :Unite buffer file_mru<CR>
+noremap <silent>,d :UniteWithBufferDir file<CR>
 noremap <silent>cd :UniteWithBufferDir file -buffer-name=files<CR>
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
@@ -177,8 +186,9 @@ nnoremap tx :tab<CR>
 nnoremap sv :vsplit<CR>
 nnoremap sh :split<CR>
 
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 nnoremap ch :call HardMode()<CR>   
 nnoremap ce :call EasyMode()<CR>   
+
 
