@@ -59,6 +59,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 
 autocmd FileType python map <buffer> f8 :call Flake8()<CR>
 
+Bundle 'jnwhiteh/vim-golang'
 
 inoremap <ESC> <ESC>:set iminsert=0<CR>
 
@@ -96,6 +97,7 @@ au BufRead,BufNewFile *.js,*.json set ft=javascript
 au BufRead,BufNewFile Vagrantfile set ft=ruby
 au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.clj,*.cljs set filetype=clojure
+au BufNewFile,BufRead *.go set filetype=go
 
 
 
@@ -196,7 +198,9 @@ nnoremap sv :vsplit<CR>
 nnoremap sh :split<CR>
 
 " hardmode
-"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+>>>>>>> go
 nnoremap ch :call HardMode()<CR>   
 nnoremap ce :call EasyMode()<CR>   
 
