@@ -31,9 +31,10 @@
   s  = status
   ss = status -s
 	dmb = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+  mine = show\\:0\\:
+  thirs = show\\:1\\:
+  new = show\\:2\\:
 
-[push]
-	default = simple
 [pull]
 	default = simple
 [commit]

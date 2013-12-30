@@ -32,6 +32,14 @@ bindkey "^S" history-incremental-search-forward
 
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt hist_reduce_blanks  
+setopt hist_save_no_dups
+setopt hist_no_store
+setopt hist_expand
+setopt inc_append_history
 
 
 alias reload="source ~/.zshrc"
@@ -44,7 +52,9 @@ alias rs="python manage.py runserver"
 alias id="sh ./init_db.sh"
 alias dp="sh ./delete_pyc.sh"
 alias gsu="git submodule update -i"
-
+alias vi="vim"
+alias v="vim"
+alias t="tig"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
