@@ -209,7 +209,6 @@ nnoremap ,e :Eval <CR>
 " hardmode
 " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
->>>>>>> go
 nnoremap ch :call HardMode()<CR>   
 nnoremap ce :call EasyMode()<CR>   
 
