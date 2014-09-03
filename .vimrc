@@ -52,6 +52,7 @@ Bundle 'nvie/vim-flake8'
 Bundle 'vim-coffee-script'
 Bundle 'othree/html5.vim'
 
+"clojure
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
@@ -216,6 +217,9 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 
+let g:syntastic_python_flake8_args = "--max-line-length=100"
+autocmd BufWritePost *.py call Flake8()
+
 nnoremap ,d :<C-u>CtrlPDir<CR>
 
 let g:startify_session_dir = '~/.vim/session'
@@ -234,3 +238,5 @@ let g:startify_files_number = 20
 let g:ctrlp_reuse_window = 'startify'
 let g:startify_list_order = ['files', 'bookmarks', 'sessions']
 set sessionoptions=blank,curdir,folds,help,tabpages,winpos
+
+:set tags=~/.tags,/home/user/commontags

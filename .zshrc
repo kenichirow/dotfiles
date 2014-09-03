@@ -45,20 +45,48 @@ setopt inc_append_history
 alias reload="source ~/.zshrc"
 
 alias g="git"
+alias b="git branch"
+alias s="git status"
 alias ll="ls -l"
 alias la="ls -la"
 
 alias rs="python manage.py runserver"
 alias id="sh ./init_db.sh"
 alias dp="sh ./delete_pyc.sh"
-alias gsu="git submodule update -i"
+alias gsu="git submodule sync && git submodule update -i"
 alias vi="vim"
 alias v="vim"
 alias t="tig"
+alias o="open"
+alias a="age"
+alias vv="vim ~/.vimrc"
+alias d="git detect"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
 . `brew --prefix`/etc/profile.d/z.sh
+
+function age () {
+  vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+
+$ p() { peco | while read LINE; do $@ $LINE; done }
+
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+       tac="tac"
+    else
+       tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | \
+    eval $tac | \
+    peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
