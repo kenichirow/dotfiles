@@ -52,6 +52,11 @@ Bundle 'nvie/vim-flake8'
 Bundle 'vim-coffee-script'
 Bundle 'othree/html5.vim'
 
+"clojure
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
+
 " colorscheme
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
@@ -197,6 +202,10 @@ nnoremap tx :tab<CR>
 nnoremap sv :vsplit<CR>
 nnoremap sh :split<CR>
 
+" REPL
+nnoremap ,ae :%Eval <CR>
+nnoremap ,e :Eval <CR>
+
 " hardmode
 " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
@@ -211,6 +220,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+
+let g:syntastic_python_flake8_args = "--max-line-length=100"
+autocmd BufWritePost *.py call Flake8()
 
 nnoremap ,d :<C-u>CtrlPDir<CR>
 
@@ -230,3 +242,5 @@ let g:startify_files_number = 20
 let g:ctrlp_reuse_window = 'startify'
 let g:startify_list_order = ['files', 'bookmarks', 'sessions']
 set sessionoptions=blank,curdir,folds,help,tabpages,winpos
+
+:set tags=~/.tags,/home/user/commontags

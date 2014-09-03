@@ -1,7 +1,7 @@
 [core]
 	editor = vim
   excludesfile = ~/.gitignore
-	quotepath = false
+	quotepath = false 
   cleanup = whitespace
 [color]
 	ui = auto
@@ -31,11 +31,16 @@
   s  = status
   ss = status -s
 	dmb = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+	merged = !git branch --merged | grep -v \\* 
   mine = show\\:0\\:
   thirs = show\\:1\\:
   new = show\\:2\\:
+  pr = pull --rebase 
+  detect = !git checkout $(git branch | peco)
 
 [pull]
 	default = simple
 [commit]
 	cleanup = whitespace
+[push]
+	default = matching
