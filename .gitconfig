@@ -1,6 +1,6 @@
 [core]
 	editor = vim
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/kenichiro.watanabe/.gitignore
 	quotepath = false 
   cleanup = whitespace
 [color]
@@ -16,26 +16,21 @@
 	user = kenichirow
 
 [alias]
-  l  = log
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=local
+  l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=local
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=local
   today = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%Cblue[%ad]\\ %Creset%s%Cblue\\ [%cn]" --decorate --since="10am" --author="kenichirow" --date=relative
   b  = branch
   ba = branch -a
   co = checkout
   cb = checkout -b
-  c  = commit 
+  c  = commit -v
   cm = commit -m
   pl = pull
   ps = push
-  s  = status
-  ss = status -s
+  s  = status --short --branch
+  ss = status
 	dmb = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 	merged = !git branch --merged | grep -v \\* 
-  mine = show\\:0\\:
-  thirs = show\\:1\\:
-  new = show\\:2\\:
-  pr = pull --rebase 
   detect = !git checkout $(git branch | peco)
 
 [pull]
@@ -43,4 +38,10 @@
 [commit]
 	cleanup = whitespace
 [push]
-	default = matching
+	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -39,6 +39,8 @@ Bundle 'wikitopian/hardmode'
 Bundle 'ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mhinz/vim-startify'
+Bundle 'aharisu/vim_goshrepl'
+Bundle 'aharisu/vim-gdev'
 
 " lang
 Bundle 'hail2u/vim-css3-syntax'
@@ -59,6 +61,7 @@ Bundle 'guns/vim-clojure-static'
 
 " colorscheme
 Bundle 'tomasr/molokai'
+Bundle 'sjl/badwolf'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/rainbow_parentheses.vim'
 
@@ -83,16 +86,9 @@ autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-
-
-" solarized options 
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
-"colorscheme molokai
 
 
 
@@ -206,6 +202,8 @@ nnoremap sh :split<CR>
 nnoremap ,ae :%Eval <CR>
 nnoremap ,e :Eval <CR>
 
+nnoremap :repl :GoshREPLWithBuffer <CR>
+
 " hardmode
 " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
@@ -238,8 +236,26 @@ let g:startify_custom_header = [
 
 let g:startify_bookmarks = [ '~/.vimrc' , '~/repos']
 let g:startify_files_number = 20                                                                  
+let g:flake8_max_line_length=120
 let g:ctrlp_reuse_window = 'startify'
 let g:startify_list_order = ['files', 'bookmarks', 'sessions']
 set sessionoptions=blank,curdir,folds,help,tabpages,winpos
 
 :set tags=~/.tags,/home/user/commontags
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
