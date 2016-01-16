@@ -1,12 +1,63 @@
-source ~/.simplenoterc
 " vundle 
 set nocompatible
 filetype off 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+"behavior
+Plugin 'surround.vim'
+"Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/neomru.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neocomplcache'
+Plugin 'Shougo/neosnippet'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mattn/zencoding-vim'
+Plugin 'wikitopian/hardmode'
+Plugin 'ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'aharisu/vim_goshrepl'
+Plugin 'aharisu/vim-gdev'
+
+" lang
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'hughbien/md-vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'vim-scripts/VimClojure'
+Plugin 'django.vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-coffee-script'
+Plugin 'othree/html5.vim'
+Plugin 'mattn/emmet-vim'
+
+"clojure
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-classpath'
+Plugin 'guns/vim-clojure-static'
+
+" colorscheme
+Plugin 'tomasr/molokai'
+Plugin 'sjl/badwolf'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/rainbow_parentheses.vim'
+
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'elixir-lang/vim-elixir'
+
+Plugin 'scrooloose/syntastic'
+
+call vundle#end()  
 
 set nocompatible
-set showmatch showmode showcmd
+set showmatch
+set showmode
+set showcmd
 set title
 set number
 set ruler
@@ -24,60 +75,18 @@ filetype plugin on
 filetype indent on
 syntax on
 
-Bundle 'gmarik/vundle'
-
-"behavior
-Bundle 'surround.vim'
-"Bundle 'scrooloose/nerdtree'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mattn/zencoding-vim'
-Bundle 'wikitopian/hardmode'
-Bundle 'ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mhinz/vim-startify'
-Bundle 'aharisu/vim_goshrepl'
-Bundle 'aharisu/vim-gdev'
-
-" lang
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'hughbien/md-vim'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'vim-scripts/VimClojure'
-Bundle 'django.vim'
-Bundle 'nvie/vim-flake8'
-Bundle 'vim-coffee-script'
-Bundle 'othree/html5.vim'
-
-"clojure
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-classpath'
-Bundle 'guns/vim-clojure-static'
-
-" colorscheme
-Bundle 'tomasr/molokai'
-Bundle 'sjl/badwolf'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/rainbow_parentheses.vim'
-
 autocmd FileType python map <buffer> f8 :call Flake8()<CR>
 
-Bundle 'jnwhiteh/vim-golang'
 
 inoremap <ESC> <ESC>:set iminsert=0<CR>
 
 " Default Indentation
- set autoindent
- set smartindent     " indent when
- set tabstop=2       " tab width
- set softtabstop=2  " backspace
- set shiftwidth=2    " indent width
- set expandtab       " expand tab to space
+set autoindent
+set smartindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -90,8 +99,6 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
-
-
 au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md set filetype=markdown
 au BufRead,BufNewFile *.coffee set ft=coffee
 au BufRead,BufNewFile *.js,*.json set ft=javascript
@@ -100,18 +107,13 @@ au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.clj,*.cljs set filetype=clojure
 au BufNewFile,BufRead *.go set filetype=go
 
-
-
 noremap <silent>j gj
 noremap <silent>k gk
 noremap <silent>vs :vnew<CR>
 noremap <silent>hs :new<CR>
-"nerd tree
-"let NERDTreeShowBookmarks=1
-"nmap <silent>nt :NERDTreeToggle<CR>
 
 "git gutter
-let g:gitgutter_enabled = 0
+let g:gitgutter_enabled = 1
 nmap <silent>gt :GitGutterToggle<CR>
 nmap <silent>ge :GitGutterEnable<CR>
 nmap <silent>gd :GitGutterDisable<CR>
@@ -126,15 +128,29 @@ noremap <silent>,rg :Unite -buffer-name=register register<CR>
 noremap <silent>,m :Unite file_mru<CR>
 noremap <silent>,d :UniteWithBufferDir file<CR>
 noremap <silent>cd :UniteWithBufferDir file -buffer-name=files<CR>
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+let g:unite_enable_start_insert=1
+" 大文字小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+" grep検索
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" ディレクトリを指定してgrep検索
+nnoremap <silent> ,dg  :<C-u>Unite grep -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> ,cg :<C-u>Unite grep:.  -buffer-name=search-buffer<CR><C-R><C-W><CR>
+" grep検索結果の再呼出
+nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+" unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
+
 
 " autocomplete
 " Launches neocomplcache automatically on vim startup.
@@ -217,9 +233,17 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_flake8_args = "--max-line-length=100"
+let g:syntastic_lua_checkers = ['luacheck']
+let g:syntastic_python_checkers = []
+
 autocmd BufWritePost *.py call Flake8()
+
 
 nnoremap ,d :<C-u>CtrlPDir<CR>
 
@@ -236,10 +260,11 @@ let g:startify_custom_header = [
 
 let g:startify_bookmarks = [ '~/.vimrc' , '~/repos']
 let g:startify_files_number = 20                                                                  
-let g:flake8_max_line_length=120
+" let g:flake8_max_line_length=120
 let g:ctrlp_reuse_window = 'startify'
 let g:startify_list_order = ['files', 'bookmarks', 'sessions']
 set sessionoptions=blank,curdir,folds,help,tabpages,winpos
+ 
 
 :set tags=~/.tags,/home/user/commontags
 let g:rbpt_colorpairs = [
